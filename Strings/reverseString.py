@@ -10,7 +10,7 @@ class Solution(object):
         for i in range(length // 2):
             s[i], s[length - i - 1] = s[length - i - 1], s[i]
         return s
-    
+
         # cheaty solution: s.reverse()
 
 
