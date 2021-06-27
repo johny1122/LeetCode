@@ -20,7 +20,7 @@ class Solution(object):
                 return count_dict[s[i]][0]
 
         return -1  # not found one
-    
+
         # another solution:
         #       letters = 'abcdefghijklmnopqrstuvwxyz'
         #       index = [s.index(l) for l in letters if s.count(l) == 1]
