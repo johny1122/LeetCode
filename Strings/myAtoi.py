@@ -29,13 +29,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        match_value = re.search(' *(\+|-)*(\d*).*', s)
+        match_value = re.search('( *)(\+|-|)(\d*).*', s)
         max_limit = 2 ** 31 - 1
         min_limit = -2 ** 31
         if match_value is not None:
-            if (match_value.group(2) is not None) and (match_value.group(2) != ''):
-                num = int(match_value.group(2))
-                if match_value.group(1) == '-':
+            if (match_value.group(3) is not None) and (match_value.group(3) != ''):
+                num = int(match_value.group(3))
+                if match_value.group(2) == '-':
                     num = -num
                 if num <= min_limit:
                     return min_limit
