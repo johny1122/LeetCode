@@ -48,10 +48,10 @@ class Solution(object):
 
 if __name__ == '__main__':
     solution = Solution()
-    # print(solution.myAtoi("42"))
-    # print(solution.myAtoi("4193 with words"))
-    # print(solution.myAtoi("words and 987"))
-    # print(solution.myAtoi("-91283472332"))
-    # print(solution.myAtoi("aaa-91283472332"))
-    # print(solution.myAtoi("aaa 333"))
-    print(solution.myAtoi("+-12"))
+    # print(solution.myAtoi("42"))                  # should return 42
+    # print(solution.myAtoi("4193 with words"))     # should return 4193
+    # print(solution.myAtoi("words and 987"))       # should return 0
+    # print(solution.myAtoi("-91283472332"))        # should return -2147483648
+    # print(solution.myAtoi("aaa-91283472332"))     # should return 0
+    # print(solution.myAtoi("aaa 333"))             # should return 0
+    print(solution.myAtoi("+-12"))                  # should return 0
