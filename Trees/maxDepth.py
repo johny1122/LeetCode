@@ -12,8 +12,34 @@ class TreeNode(object):
 
 
 class Solution(object):
+    def maxDepth_helper(self, node):
+        if node.left is None and node.right is None:
+            return 1
+        max_right, max_left = 0, 0
+        if node.left is not None:
+            max_left = self.maxDepth_helper(node.left) + 1
+        if node.right is not None:
+            max_right = self.maxDepth_helper(node.right) + 1
+
+        return max_left if max_left > max_right else max_right
+
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+        if root is None:
+            return 0
+        return self.maxDepth_helper(root)
+
+
+if __name__ == '__main__':
+    solution = Solution()
+
+    root = TreeNode(1, TreeNode(9, None, None), TreeNode(20, TreeNode(15, None, None), TreeNode(7, None, None)))
+    # root = TreeNode(1, TreeNode(9, None, None),
+    #                 TreeNode(20, TreeNode(15, TreeNode(10, TreeNode(9, None, None), None), None), TreeNode(7, None, None)))
+    # root = TreeNode(1, TreeNode(9, None, None), TreeNode(7, None, None))
+    # root = TreeNode(1, None, None)
+    # root = None
+    print(solution.maxDepth(root))
